@@ -1,1 +1,98 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="../style.css">
+
+    <title>Understanding SQL Joins — Pradyumna</title>
+</head>
+
+<body>
+
+<header class="site-header">
+    <a href="../index.html" class="logo">PRADYUMNA</a>
+
+    <nav>
+        <a href="../index.html#notes">Notes</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../about.html">About</a>
+    </nav>
+</header>
+
+<main class="article-page">
+
+    <a href="../index.html#notes" class="back-link">← Back to notes</a>
+
+    <header class="article-header">
+        <p class="eyebrow">SQL · DATABASES</p>
+
+        <h1>Understanding how SQL joins work</h1>
+
+        <p class="article-subtitle">
+            A practical exploration of how relational tables connect
+            and how to retrieve meaningful information from them.
+        </p>
+
+        <p class="article-meta">8 MIN READ · LEARNING NOTES</p>
+    </header>
+
+    <article class="article-body">
+
+        <h2>Why do joins exist?</h2>
+
+        <p>
+            Relational databases store information in tables. Instead of
+            repeating every detail in a single table, we often separate
+            information into related tables.
+        </p>
+
+        <p>
+            For example, one table might store customers, while another
+            stores their orders. A JOIN lets us combine information from
+            these tables using a related column.
+        </p>
+
+        <h2>Meet our tables</h2>
+
+        <p>Imagine we have these two tables.</p>
+
+        <h3>Customers</h3>
+
+        <pre><code>customer_id | name
+------------|--------
+1           | Alice
+2           | Bob
+3           | Charlie</code></pre>
+
+        <h3>Orders</h3>
+
+        <pre><code>order_id | customer_id | product
+---------|-------------|--------
+101      | 1           | Laptop
+102      | 2           | Phone
+103      | 1           | Keyboard</code></pre>
+
+        <p>
+            Notice that Alice has two orders, Bob has one, and Charlie
+            has none. The <code>customer_id</code> column connects the
+            two tables.
+        </p>
+
+        <h2>INNER JOIN</h2>
+
+        <p>
+            An INNER JOIN returns only rows that have matching values
+            in both tables.
+        </p>
+
+        <pre><code>SELECT
+    customers.name,
+    orders.product
+FROM customers
+INNER JOIN orders
+    ON customers.customer_id = orders.customer_id;</code></pre>
+
+        <p
