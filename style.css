@@ -315,3 +315,15 @@ a.note {
 }
 
 
+/* Keep article links consistent with the site's theme */
+a,
+a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #946a49;
+}
+
+
