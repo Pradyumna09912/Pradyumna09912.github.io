@@ -1,30 +1,107 @@
+
+/* 1. Base styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #f8f7f4;
+    color: #24231f;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+/* 2. Navigation */
 .site-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #d8d5cf;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 28px 24px;
+    border-bottom: 1px solid #dedbd3;
 }
 
 .logo {
-    color: #222;
+    color: #24231f;
     text-decoration: none;
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 13px;
+    font-weight: 700;
     letter-spacing: 2px;
 }
 
 nav {
     display: flex;
-    gap: 30px;
+    align-items: center;
+    gap: 28px;
 }
 
 nav a {
-    color: #555;
+    color: #57554f;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13px;
+    transition: color 0.2s ease;
 }
 
 nav a:hover {
-    color: #222;
+    color: #a16f4a;
+}
+
+/* 3. Hero section */
+.hero {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 120px 24px 100px;
+}
+
+.eyebrow {
+    margin: 0 0 24px;
+    color: #946a49;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    max-width: 750px;
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(44px, 7vw, 82px);
+    font-weight: 400;
+    letter-spacing: -2px;
+    line-height: 1.08;
+}
+
+.hero-description {
+    max-width: 520px;
+    margin-top: 28px;
+    color: #69665f;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* 4. Small screen adjustments */
+@media (max-width: 600px) {
+    .site-header {
+        padding: 22px 18px;
+    }
+
+    nav {
+        gap: 14px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 85px 22px 70px;
+    }
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
 }
