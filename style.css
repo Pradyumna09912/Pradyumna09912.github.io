@@ -327,3 +327,42 @@ a:hover {
 }
 
 
+/* Article page layout */
+.article {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Article introduction */
+.article-hero {
+    padding: 80px 0 72px;
+    border-bottom: 1px solid #dedbd3;
+}
+
+.article-hero h1 {
+    max-width: 900px;
+    font-size: clamp(42px, 5.5vw, 72px);
+    line-height: 1.1;
+}
+
+/* Article body */
+.article-body {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 0;
+}
+
+.article-body h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 34px;
+    font-weight: 400;
+}
+
+.article-body p {
+    color: #57554f;
+    font-size: 17px;
+    line-height: 1.9;
+}
+
