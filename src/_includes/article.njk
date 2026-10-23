@@ -1,0 +1,45 @@
+---
+layout: layout.njk
+---
+
+<div class="article-page">
+
+    <a href="/writing/" class="back-link">
+        ← Back to writing
+    </a>
+
+    <header class="article-header">
+
+        {% if category %}
+            <p class="eyebrow">{{ category }}</p>
+        {% endif %}
+
+        <h1>{{ title }}</h1>
+
+        {% if description %}
+            <p class="article-subtitle">{{ description }}</p>
+        {% endif %}
+
+        {% if readingTime or articleType %}
+            <p class="article-meta">
+                {% if readingTime %}
+                    {{ readingTime }} MIN READ
+                {% endif %}
+
+                {% if readingTime and articleType %}
+                    ·
+                {% endif %}
+
+                {% if articleType %}
+                    {{ articleType | upper }}
+                {% endif %}
+            </p>
+        {% endif %}
+
+    </header>
+
+    <article class="article-body">
+        {{ content | safe }}
+    </article>
+
+</div>

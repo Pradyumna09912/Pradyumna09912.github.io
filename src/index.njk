@@ -1,0 +1,51 @@
+---
+layout: layout.njk
+title: Home
+description: A place for curiosity and ideas.
+---
+
+<section class="hero">
+    
+
+    <h1>Curiosity,<br>put into action.</h1>
+
+    <p class="hero-description">
+        Notes on things I learn, ideas I explore,
+        projects I build, and questions worth thinking about.
+    </p>
+</section>
+
+<section class="notes" id="notes">
+    <div class="section-heading">
+        <p class="eyebrow">THE NOTEBOOK</p>
+        <h2>Selected notes<span>.</span></h2>
+    </div>
+
+    {% for article in collections.posts | reverse %}
+        <a href="{{ article.url }}" class="note">
+            <span class="note-number">
+                 {% if loop.index < 10 %}0{% endif %}{{ loop.index }}
+            </span>
+
+            <div class="note-content">
+                <h3>{{ article.data.title }}</h3>
+
+                {% if article.data.description %}
+                    <p>{{ article.data.description }}</p>
+                {% endif %}
+
+                <span class="note-meta">
+                    {{ article.data.category or "ARTICLE" }}
+                    {% if article.data.readingTime %}
+                        · {{ article.data.readingTime }} MIN READ
+                    {% endif %}
+                </span>
+            </div>
+
+            <span class="note-arrow">↗</span>
+        </a>
+    {% else %}
+        <p>No notes published yet.</p>
+    {% endfor %}
+</section>
+

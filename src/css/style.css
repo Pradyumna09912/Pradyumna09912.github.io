@@ -1,0 +1,393 @@
+
+/* 1. Base styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #f8f7f4;
+    color: #24231f;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+/* 2. Navigation */
+.site-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 28px 24px;
+    border-bottom: 1px solid #dedbd3;
+}
+
+.logo {
+    color: #24231f;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+nav a {
+    color: #57554f;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: #a16f4a;
+}
+
+/* 3. Hero section */
+.hero {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 120px 24px 100px;
+}
+
+.eyebrow {
+    margin: 0 0 24px;
+    color: #946a49;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    max-width: 750px;
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(44px, 7vw, 82px);
+    font-weight: 400;
+    letter-spacing: -2px;
+    line-height: 1.08;
+}
+
+.hero-description {
+    max-width: 520px;
+    margin-top: 28px;
+    color: #69665f;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* 4. Small screen adjustments */
+@media (max-width: 600px) {
+    .site-header {
+        padding: 22px 18px;
+    }
+
+    nav {
+        gap: 14px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 85px 22px 70px;
+    }
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+}
+
+
+/* Latest notes section */
+.notes {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 40px 24px 100px;
+}
+
+.section-heading {
+    margin-bottom: 28px;
+}
+
+.section-heading h2 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: -1px;
+}
+
+.section-heading h2 span {
+    color: #946a49;
+}
+
+.note {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 28px 0;
+    border-top: 1px solid #dedbd3;
+}
+
+.note-number {
+    padding-top: 4px;
+    color: #946a49;
+    font-size: 12px;
+}
+
+.note-content {
+    flex: 1;
+}
+
+.note-content h3 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.note-content p {
+    margin: 8px 0 12px;
+    color: #69665f;
+    font-size: 14px;
+}
+
+.note-meta {
+    color: #946a49;
+    font-size: 10px;
+    letter-spacing: 1.3px;
+}
+
+.note-arrow {
+    padding-top: 4px;
+    color: #69665f;
+    transition: transform 0.2s ease;
+}
+
+.note:hover .note-arrow {
+    transform: translate(3px, -3px);
+}
+
+@media (max-width: 600px) {
+    .notes {
+        padding: 25px 22px 70px;
+    }
+
+    .note {
+        gap: 14px;
+    }
+
+    .note-content h3 {
+        font-size: 19px;
+    }
+}
+
+```css
+/* Article page */
+.article-page {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 55px 24px 100px;
+}
+
+.back-link,
+.article-footer a {
+    color: #69665f;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.back-link:hover,
+.article-footer a:hover {
+    color: #a16f4a;
+}
+
+.article-header {
+    padding: 65px 0 45px;
+    border-bottom: 1px solid #dedbd3;
+}
+
+.article-header .eyebrow {
+    margin-bottom: 22px;
+}
+
+.article-header h1 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(40px, 6vw, 64px);
+    font-weight: 400;
+    letter-spacing: -1.5px;
+    line-height: 1.12;
+}
+
+.article-subtitle {
+    max-width: 650px;
+    margin-top: 24px;
+    color: #69665f;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.article-meta {
+    margin-top: 28px;
+    color: #946a49;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+}
+
+.article-body {
+    padding-top: 35px;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.article-body h2 {
+    margin: 45px 0 12px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.article-body h3 {
+    margin-top: 28px;
+    font-size: 17px;
+}
+
+.article-body p {
+    color: #57554f;
+}
+
+.article-body pre {
+    overflow-x: auto;
+    padding: 22px;
+    background: #eeece6;
+    border: 1px solid #dedbd3;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.article-body code {
+    font-family: Consolas, "Courier New", monospace;
+}
+
+.article-footer {
+    margin-top: 65px;
+    padding-top: 25px;
+    border-top: 1px solid #dedbd3;
+}
+
+@media (max-width: 600px) {
+    .article-page {
+        padding: 35px 22px 70px;
+    }
+
+    .article-header {
+        padding: 50px 0 35px;
+    }
+
+    .article-body h2 {
+        font-size: 26px;
+    }
+}
+a.note {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* Center and constrain article content */
+.article {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+
+/* Keep article links consistent with the site's theme */
+a,
+a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #946a49;
+}
+
+
+/* Article page layout */
+.article {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Article introduction */
+.article-hero {
+    padding: 80px 0 72px;
+    border-bottom: 1px solid #dedbd3;
+}
+
+.article-hero h1 {
+    max-width: 900px;
+    font-size: clamp(42px, 5.5vw, 72px);
+    line-height: 1.1;
+}
+
+/* Article body */
+.article-body {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 0;
+}
+
+.article-body h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 34px;
+    font-weight: 400;
+}
+
+.article-body p {
+    color: #57554f;
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+
+/* Align the article header with the site layout */
+.article-header,
+.article-hero,
+.back-link {
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.article-header,
+.article-hero {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.back-link {
+    padding-left: 24px;
+}
+
+.article {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 72px 24px;
+}
